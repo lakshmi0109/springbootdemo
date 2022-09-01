@@ -18,7 +18,7 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
     
-    public List getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         List employees = new ArrayList();
         employeeRepository.findAll().forEach(employee -> employees.add(employee));
         return employees;
