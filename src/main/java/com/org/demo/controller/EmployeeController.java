@@ -69,8 +69,9 @@ public class EmployeeController
     }
 
     @PostMapping("/saveEmployee")
-    private ResponseEntity createEmployee(@RequestBody Employee employee) {
-      try{
+    private ResponseEntity createEmployee(@RequestBody EmployeeDto employeeDto) {
+    	 Employee employee = convertToEntity(employeeDto);
+    	try{
         employeeService.saveOrUpdate(employee);
       } catch (Exception exception) {
         return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -88,10 +89,16 @@ public class EmployeeController
       return new ResponseEntity("Employee deleted with id: "+id, HttpStatus.OK);
     }
     
-    private EmployeeDto convertToDto(Employee employee) {
+    private Employee convertToEntity(EmployeeDto employeeDto) {
   	  
   	  ModelMapper modelMapper = new ModelMapper();
   	  
-  	  return modelMapper.map(employee, EmployeeDto.class);
+  	  return modelMapper.map(employeeDto, Employee.class);
     }
+    private EmployeeDto convertToDto(Employee employee) {
+    	  
+    	  ModelMapper modelMapper = new ModelMapper();
+    	  
+    	  return modelMapper.map(employee, EmployeeDto.class);
+      }
 }
