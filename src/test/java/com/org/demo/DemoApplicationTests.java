@@ -2,6 +2,7 @@ package com.org.demo;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class DemoApplicationTests {
 		
 		Employee emp = new Employee();
 		
+		emp.setAge(2);
 		emp.setEmail("lakshmi.rongali@email.com");
 		emp.setFirstName("Laxmi");
 		emp.setLastName("Rongali");
@@ -47,18 +49,18 @@ public class DemoApplicationTests {
 	@Test
 	@Order(2)
 	
+	public void findByIDTest() {
+		
+		Employee emp = employeeRepository.findById(1L).get();
+		assertEquals("Laxmi", emp.getFirstName());
+	}
+	@Test
+	@Order(3)
+	
 	public void findAllTest()
 	{
 		List<Employee> list = employeeRepository.findAll();
 		
 		assertThat(list).size().isGreaterThan(0);
-	}
-
-	@Test
-	@Order(3)
-	
-	public void findByIDTest() {
-		
-		Employee emp = employeeRepository.findById(1L).get();
 	}
 }

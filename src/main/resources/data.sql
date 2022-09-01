@@ -1,5 +1,5 @@
 INSERT INTO 
-	TBL_EMPLOYEES (first_name, last_name, email) 
+	TBL_EMPLOYEES (age,first_name, last_name, email) 
 VALUES
-  	('Sahasra', 'Sree', 'sahasrasree@email.com'),
-  	('hrushee', 'kesh', 'johnchetan@email.com');
+  	(20,'Sahasra', 'Sree', 'sahasrasree@email.com'),
+  	(29,'hrushee', 'kesh', 'johnchetan@email.com');

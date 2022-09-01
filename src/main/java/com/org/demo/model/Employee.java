@@ -24,7 +24,21 @@ public class Employee {
     @Column(name="email", nullable=false, length=200)
     private String email;
     
-    public Long getId() {
+    @Column(name ="age")
+    private int age;
+    
+    
+    
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Long getId() {
 		return id;
 	}
 
@@ -56,9 +70,11 @@ public class Employee {
 		this.email = email;
 	}
 
-    @Override
-    public String toString() {
-        return "EmployeeEntity [id=" + id + ", firstName=" + firstName + 
-                ", lastName=" + lastName + ", email=" + email   + "]";
-    }
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", age=" + age + "]";
+	}
+
+   
 }
