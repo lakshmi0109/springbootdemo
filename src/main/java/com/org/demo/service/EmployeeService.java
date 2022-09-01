@@ -11,7 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.org.demo.EmployeeDTO.EmployeeDto;
+import com.org.demo.dto.EmployeeDto;
 import com.org.demo.model.Employee;
 import com.org.demo.repository.EmployeeRepository;
 
