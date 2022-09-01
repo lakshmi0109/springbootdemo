@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.org.demo.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 15.228 s <<< FAILURE! - in com.org.demo.DemoApplicationTests
+findAllTest(com.org.demo.DemoApplicationTests)  Time elapsed: 1.251 s  <<< ERROR!
+org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at com.org.demo.DemoApplicationTests.findAllTest(DemoApplicationTests.java:52)
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at com.org.demo.DemoApplicationTests.findAllTest(DemoApplicationTests.java:52)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at com.org.demo.DemoApplicationTests.findAllTest(DemoApplicationTests.java:52)
+Caused by: java.lang.IllegalStateException: The write format 2 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at com.org.demo.DemoApplicationTests.findAllTest(DemoApplicationTests.java:52)
+
+saveEmployeeTest(com.org.demo.DemoApplicationTests)  Time elapsed: 1.045 s  <<< ERROR!
+org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at com.org.demo.DemoApplicationTests.saveEmployeeTest(DemoApplicationTests.java:42)
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+	at com.org.demo.DemoApplicationTests.saveEmployeeTest(DemoApplicationTests.java:42)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at com.org.demo.DemoApplicationTests.saveEmployeeTest(DemoApplicationTests.java:42)
+Caused by: java.lang.IllegalStateException: The write format 2 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at com.org.demo.DemoApplicationTests.saveEmployeeTest(DemoApplicationTests.java:42)
+
