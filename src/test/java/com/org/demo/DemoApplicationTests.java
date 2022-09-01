@@ -47,18 +47,18 @@ public class DemoApplicationTests {
 	@Test
 	@Order(2)
 	
+	public void findByIDTest() {
+		
+		Employee emp = employeeRepository.findById(1L).get();
+		assertEquals("Laxmi", emp.getFirstName());
+	}
+	@Test
+	@Order(3)
+	
 	public void findAllTest()
 	{
 		List<Employee> list = employeeRepository.findAll();
 		
 		assertThat(list).size().isGreaterThan(0);
-	}
-
-	@Test
-	@Order(3)
-	
-	public void findByIDTest() {
-		
-		Employee emp = employeeRepository.findById(1L).get();
 	}
 }
